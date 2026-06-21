@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>再访 · 乐鱼体育 – 轻导航介绍</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: #f3f4f6;
+      color: #2d2e32;
+      line-height: 1.6;
+      padding: 0 20px;
+    }
+
+    .page-wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 2rem 0 3rem;
+    }
+
+    /* 导航 */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #ffffff;
+      padding: 1rem 1.8rem;
+      border-radius: 28px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02), 0 1px 3px rgba(0,0,0,0.05);
+      border: 1px solid #eaeef2;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.2rem;
+    }
+
+    .nav-brand {
+      font-weight: 600;
+      font-size: 1.25rem;
+      letter-spacing: 0.01em;
+      color: #1e293b;
+    }
+
+    .nav-brand span {
+      background: #eef2f6;
+      padding: 0.1rem 0.7rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      margin-left: 6px;
+      color: #3f4a5c;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #2d3a4a;
+      font-size: 0.95rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 60px;
+      transition: background 0.2s;
+    }
+
+    nav a:hover {
+      background: #e9edf2;
+    }
+
+    /* hero 区 – 轻介绍 */
+    .hero {
+      background: #ffffff;
+      border: 1px solid #e3e9ef;
+      border-radius: 40px;
+      padding: 3.2rem 2.8rem;
+      margin-bottom: 2.8rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.02);
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 550;
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+      color: #12161e;
+    }
+
+    .hero p {
+      max-width: 800px;
+      font-size: 1.1rem;
+      color: #424a58;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero .note-line {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.5rem 1.8rem;
+      background: #f8fafc;
+      padding: 0.9rem 1.6rem;
+      border-radius: 60px;
+      border: 1px solid #e5eef4;
+      margin-top: 1rem;
+    }
+
+    .note-line .tag {
+      background: #dce4eb;
+      padding: 0 1rem;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      color: #1f2a36;
+    }
+
+    .note-line a {
+      color: #1f3a57;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px dashed #a0b8ce;
+    }
+
+    .note-line a:hover {
+      border-bottom-style: solid;
+      color: #0b1b2e;
+    }
+
+    /* 三场景卡片网格 */
+    .scene-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0 2.5rem;
+    }
+
+    .scene-card {
+      background: #ffffff;
+      border: 1px solid #e2e9f0;
+      border-radius: 32px;
+      padding: 2rem 1.8rem 1.8rem;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.02);
+      transition: box-shadow 0.2s, transform 0.15s;
+    }
+
+    .scene-card:hover {
+      box-shadow: 0 12px 28px rgba(0,0,0,0.04);
+      transform: translateY(-3px);
+    }
+
+    .scene-card h3 {
+      font-size: 1.3rem;
+      font-weight: 530;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #eef2f7;
+    }
+
+    .scene-card p {
+      color: #404b5a;
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .scene-card .soft-link {
+      display: inline-block;
+      margin-top: 0.8rem;
+      color: #2f4057;
+      background: #f0f4fa;
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      border: 1px solid #dde6ef;
+      transition: background 0.2s;
+    }
+
+    .scene-card .soft-link a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .scene-card .soft-link a:hover {
+      text-decoration: underline;
+    }
+
+    /* 常见说明 / FAQ 摘要 */
+    .faq-summary {
+      background: #ffffff;
+      border: 1px solid #e1e8ef;
+      border-radius: 36px;
+      padding: 2.6rem 2.4rem;
+      margin: 3rem 0 2rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+    }
+
+    .faq-summary h2 {
+      font-size: 1.6rem;
+      font-weight: 500;
+      margin-bottom: 1.4rem;
+      letter-spacing: -0.01em;
+    }
+
+    .faq-item {
+      margin-bottom: 1.4rem;
+    }
+
+    .faq-item strong {
+      display: block;
+      font-weight: 540;
+      color: #1e2b3b;
+      margin-bottom: 0.15rem;
+    }
+
+    .faq-item p {
+      margin-left: 0.2rem;
+      color: #45505f;
+    }
+
+    .faq-item a {
+      color: #1f405f;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+      text-decoration-color: #b8cfdd;
+    }
+
+    .faq-item a:hover {
+      color: #0f2538;
+    }
+
+    /* 底部 */
+    .footer-note {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #dce5ed;
+      padding-top: 2rem;
+      margin-top: 1.8rem;
+      color: #5b6677;
+      font-size: 0.9rem;
+    }
+
+    .footer-note a {
+      color: #2b4058;
+      text-decoration: none;
+      border-bottom: 1px solid #c1d0dd;
+    }
+
+    .footer-note a:hover {
+      border-bottom-color: #1b2e41;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 0 14px;
+      }
+      .hero {
+        padding: 2rem 1.6rem;
+      }
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+      .hero .note-line {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.6rem;
+      }
+      nav {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.6rem;
+        padding: 1rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <!-- 顶部导航 -->
+  <nav>
+    <div class="nav-brand">
+      再访小记 <span>轻导航</span>
+    </div>
+    <div>
+      <a href="#scene">场景</a>
+      <a href="#faq">常见说明</a>
+      <a href="#bookmark">收藏提示</a>
+    </div>
+  </nav>
+
+  <!-- hero 区：再次访问 / 收藏角度 -->
+  <div class="hero">
+    <h1>再次回到这里 · 乐鱼体育</h1>
+    <p>
+      有时候我们喜欢一个地方，会下意识记住它的角落。隔段时间再回来，熟悉中带一点新鲜感。<br>
+      对我而言，<a href="https://appmain-leyu.com.cn" style="color:#1e3a5b; text-decoration: underline; text-underline-offset: 3px;">乐鱼体育</a>就是这样一个去处。没有刻意的开场，页面就在那里，安静地等你再次打开。
+    </p>
+    <div class="note-line">
+      <span class="tag">📎 收藏小贴士</span>
+      <span>如果你愿意，可以把 </span>
+      <a href="https://appmain-leyu.com.cn">乐鱼体育</a>
+      <span> 加入浏览器书签栏，下次能更快找到。</span>
+    </div>
+  </div>
+
+  <!-- 三个场景模块 -->
+  <section id="scene" style="margin-top: 1rem;">
+    <h2 style="font-weight: 470; font-size: 1.5rem; border-left: 5px solid #b6ccde; padding-left: 1rem; margin-bottom: 0.8rem;">偶尔会想起的三种场景</h2>
+    <div class="scene-grid">
+      <div class="scene-card">
+        <h3>🌤 午后 · 翻翻动态</h3>
+        <p>周末下午，泡杯茶，随便看看最近有什么更新。没有任务感，只是习惯性地打开 <a href="https://appmain-leyu.com.cn" style="color:#1f3c57; text-decoration: underline;">乐鱼体育</a>，页面加载后浏览一阵，偶尔发现新内容，像翻开一本常读常新的杂志。</p>
+        <div class="soft-link"><a href="https://appmain-leyu.com.cn">乐鱼体育</a></div>
+      </div>
+      <div class="scene-card">
+        <h3>📱 碎片时间 · 快速登陆</h3>
+        <p>通勤或者排队时，掏出手机点开保存的页面。因为之前已经收藏过，所以每次都能直达。不需要重新搜索，也不用翻历史记录，一个书签就够了。</p>
+        <div class="soft-link"><a href="https://appmain-leyu.com.cn">乐鱼体育</a></div>
+      </div>
+      <div class="scene-card">
+        <h3>🖥 工作间隙 · 回看信息</h3>
+        <p>处理完手头的事情，切换到浏览器标签页，顺手刷新一下。不打扰，不费神，像逛一个熟悉的社区。如果你也喜欢这种轻量的节奏，不妨把 <a href="https://appmain-leyu.com.cn" style="color:#1f3c57;">乐鱼体育</a> 固定为常用标签。</p>
+        <div class="soft-link"><a href="https://appmain-leyu.com.cn">乐鱼体育</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 常见说明 / FAQ 摘要 -->
+  <div class="faq-summary" id="faq">
+    <h2>一些常见说明 · 简短版</h2>
+
+    <div class="faq-item">
+      <strong>✦ 如何再次找到这个页面？</strong>
+      <p>将 <a href="https://appmain-leyu.com.cn">乐鱼体育</a> 添加到浏览器书签（收藏夹），名称可自定。或者直接在地址栏输入域名，下次输入时浏览器会自动补全。</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>✦ 页面内容和之前一样吗？</strong>
+      <p>网站会持续更新，但基本结构保持一贯的风格。如果你隔了一段时间回来，可能会看到新的板块或调整，整体调性不变。</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>✦ 可以推荐给朋友吗？</strong>
+      <p>当然可以。直接分享链接 <a href="https://appmain-leyu.com.cn">乐鱼体育</a> 给对方就行，不需要额外说明。每个人打开后看到的都是同一片区域，体验一致。</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>✦ 需要注册或登录才能浏览吗？</strong>
+      <p>大部分内容可以直接访问，无需注册。部分功能或个性化设置可能需登录，具体以页面实际提示为准。</p>
+    </div>
+  </div>
+
+  <!-- 收藏提醒模块（小卡片） -->
+  <div id="bookmark" style="background: #ffffff; border-radius: 28px; border: 1px solid #e1eaf0; padding: 1.4rem 2rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; margin: 1.8rem 0;">
+    <span style="display: flex; align-items: center; gap: 8px;">
+      <span style="background: #e4ebf2; padding: 0.2rem 0.9rem; border-radius: 60px; font-size: 0.9rem;">📌 收藏提示</span>
+      <span style="color: #374151;">在浏览器里收藏 <a href="https://appmain-leyu.com.cn" style="color:#1e3c58; text-decoration: underline;">乐鱼体育</a> ，下次直接从书签栏打开</span>
+    </span>
+    <span style="color: #5f6f80; font-size: 0.9rem; background: #f0f5fa; padding: 0.2rem 1.1rem; border-radius: 60px; border:1px solid #dde6ef;">cmd/ctrl + D</span>
+  </div>
+
+  <!-- 底部 -->
+  <div class="footer-note">
+    <span>再访导航 · 轻量介绍</span>
+    <span>
+      <a href="https://appmain-leyu.com.cn">乐鱼体育</a> 
+      <span style="margin: 0 0.5rem;">·</span> 
+      保持简洁
+    </span>
+  </div>
+
+</div>
+</body>
+</html>
